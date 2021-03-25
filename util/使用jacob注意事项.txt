@@ -1,0 +1,17 @@
+使用Jacob.jar时的注意事项
+
+Ronustine_ 2016-03-24 10:38:02  11803  收藏 5
+分类专栏： java开发常用需求 文章标签： Jacob
+在项目的lib下添加Jacob.jar后还应该注意对应版本的jacob.dll文件。
+
+1、把jacob.dll文件，复制到 windows\system32 目录下。（注：我用的时候这个方法不能运行）
+2、把jacob.dll放入 Java\jdkXXXX\jre\bin目录下.把jacob.jar放入 Java\jdk1.5.0_0\jre\lib\ext目录下.可以正常运行。
+3、把jacob.dll放入 \glc\src目录下.把jacob.jar放入WEB-INF\lib目录下，也是可以正常运行。
+
+三种错误：
+1、找不到jacob.dll，配置路径问题（确认jacob.dll配置正确）
+java.lang.UnsatisfiedLinkError: no jacob in java.library.path
+2、找不到资源文件，资源文件路径问题（查看程序中资源文件路径的设置，并检查资源文件的存放路径）
+com.jacob.com.ComFailException: Invoke of: Open
+3、jacob.dll或jacob.jar对应版本错误
+com.jacob.com.ComFailException: A COM exception has been encountered:
